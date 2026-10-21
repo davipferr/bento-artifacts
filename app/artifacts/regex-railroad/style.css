@@ -1,0 +1,225 @@
+.rx-editor {
+  gap: 12px;
+}
+.rx-input {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 4px 12px;
+  font: 16px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+.rx-input:focus-within {
+  border-color: var(--accent);
+}
+.rx-input input {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  color: var(--text);
+  background: none;
+  border: none;
+  outline: none;
+  padding: 6px 0;
+}
+.rx-slash {
+  color: var(--muted);
+}
+.rx-source {
+  margin: 0;
+  min-height: 22px;
+  overflow-wrap: anywhere;
+}
+.rx-source mark,
+.rx-error mark {
+  background: color-mix(in oklab, var(--cat-tools) 40%, transparent);
+  color: inherit;
+  border-radius: 3px;
+}
+.rx-error {
+  margin: 0;
+  color: var(--cat-games);
+}
+
+/* ---- Diagram -------------------------------------------------------- */
+
+.rx-diagram {
+  padding: 12px;
+}
+.rx-scroll {
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+.railroad {
+  display: block;
+  max-width: none;
+  font: 13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+.railroad path {
+  fill: none;
+  stroke: var(--muted);
+  stroke-width: 2;
+}
+.railroad .rr-arrow {
+  fill: var(--muted);
+  stroke: none;
+}
+.railroad .rr-loop path:not(.rr-arrow),
+.railroad .rr-bypass path:not(.rr-arrow) {
+  stroke-dasharray: 0;
+}
+.rr-stop {
+  fill: var(--muted);
+}
+.rr-label {
+  font: 11px ui-sans-serif, system-ui, sans-serif;
+  fill: var(--muted);
+}
+.rr-term {
+  cursor: default;
+}
+.rr-term rect {
+  stroke-width: 1.5;
+  fill: var(--surface);
+}
+.rr-term text {
+  fill: var(--text);
+}
+.rr-literal rect {
+  stroke: var(--cat-algorithms);
+  fill: color-mix(in oklab, var(--cat-algorithms) 12%, var(--surface));
+}
+.rr-class rect {
+  stroke: var(--cat-generative);
+  fill: color-mix(in oklab, var(--cat-generative) 12%, var(--surface));
+}
+.rr-class.negated rect {
+  stroke-dasharray: 4 3;
+}
+.rr-anchor rect,
+.rr-backref rect {
+  stroke: var(--cat-tools);
+  stroke-dasharray: 3 3;
+  fill: color-mix(in oklab, var(--cat-tools) 10%, var(--surface));
+}
+.rr-group > rect {
+  fill: color-mix(in oklab, var(--cat-sound) 5%, transparent);
+  stroke: var(--cat-sound);
+  stroke-width: 1.5;
+}
+.rr-group.rr-look > rect {
+  stroke: var(--muted);
+  stroke-dasharray: 5 4;
+  fill: transparent;
+}
+.rr-term.hot rect {
+  stroke-width: 3;
+  fill: color-mix(in oklab, var(--cat-tools) 30%, var(--surface));
+}
+.rr-group.hot > rect {
+  stroke-width: 3;
+  fill: color-mix(in oklab, var(--cat-sound) 14%, transparent);
+}
+
+.swatch.rx-sw-literal {
+  background: var(--cat-algorithms);
+}
+.swatch.rx-sw-class {
+  background: var(--cat-generative);
+}
+.swatch.rx-sw-anchor {
+  background: var(--cat-tools);
+}
+.swatch.rx-sw-group {
+  background: var(--cat-sound);
+}
+
+/* ---- Tests ---------------------------------------------------------- */
+
+.rx-tests {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .rx-tests {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.rx-tests h3 {
+  font-size: 15px;
+}
+.rx-tests textarea {
+  width: 100%;
+  resize: vertical;
+  font: 13px/1.7 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+.rx-results {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.rx-results li {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 8px;
+  align-items: start;
+}
+.rx-badge {
+  font-size: 12px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 1px 0;
+  font-variant-numeric: tabular-nums;
+}
+.hit .rx-badge {
+  background: color-mix(in oklab, var(--done) 20%, transparent);
+}
+.miss .rx-badge {
+  color: var(--muted);
+  background: var(--chip);
+}
+.rx-line {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.miss .rx-line {
+  color: var(--muted);
+}
+.rx-match {
+  color: inherit;
+  border-radius: 3px;
+  padding: 1px 0;
+}
+.rx-match.tone-0 {
+  background: color-mix(in oklab, var(--cat-algorithms) 30%, transparent);
+}
+.rx-match.tone-1 {
+  background: color-mix(in oklab, var(--cat-generative) 30%, transparent);
+}
+.rx-empty {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  vertical-align: middle;
+  background: var(--cat-algorithms);
+}
+.rx-groups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+.rx-groups .tag {
+  background: color-mix(in oklab, var(--cat-sound) 12%, transparent);
+}

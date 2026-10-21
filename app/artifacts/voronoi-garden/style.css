@@ -1,0 +1,24 @@
+.vg-toolbar {
+  gap: 12px;
+}
+.vg-toolbar .slider {
+  min-width: 200px;
+}
+.vg-stage {
+  padding: 12px;
+}
+.vg-canvas {
+  height: clamp(340px, 62vh, 620px);
+  cursor: crosshair;
+  touch-action: none;
+}
+.vg-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.vg-stats strong {
+  color: var(--text);
+}

@@ -1,0 +1,65 @@
+.rd-toolbar {
+  gap: 12px;
+}
+.rd-swatch {
+  width: 44px;
+  height: 22px;
+  padding: 0;
+  border-radius: 999px;
+  border: 2px solid transparent;
+}
+.rd-swatch.active {
+  border-color: var(--text);
+}
+
+.rd-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .rd-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.rd-stage {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.rd-canvas {
+  display: block;
+  width: 100%;
+  height: clamp(340px, 64vh, 640px);
+  cursor: crosshair;
+  touch-action: none;
+}
+.rd-canvas.pixelated {
+  image-rendering: pixelated;
+}
+.rd-badge {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  font-size: 12px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+.rd-side {
+  gap: 12px;
+}
+.rd-side h3 {
+  font-size: 15px;
+}
+.rd-side p {
+  margin: 0;
+}
+.rd-map {
+  height: 220px;
+  cursor: crosshair;
+  touch-action: none;
+}

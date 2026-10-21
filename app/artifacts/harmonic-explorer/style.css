@@ -1,0 +1,45 @@
+.harm-toolbar {
+  gap: 14px;
+}
+.harm-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 8px;
+  margin: 0;
+}
+.harm-stats div {
+  background: var(--chip);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+.harm-stats dt {
+  font-size: 11.5px;
+  color: var(--muted);
+}
+.harm-stats dd {
+  margin: 2px 0 0;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.harm-panels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+}
+.harm-panels h3,
+.harm-keys-head h3 {
+  font-size: 15px;
+}
+.harm-panels p {
+  margin: 0;
+}
+.harm-spectrum {
+  height: 240px;
+  cursor: ns-resize;
+  touch-action: none;
+}
+.harm-wave {
+  height: 240px;
+  background: var(--bg);
+}

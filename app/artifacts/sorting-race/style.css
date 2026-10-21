@@ -1,0 +1,68 @@
+.race-toolbar {
+  gap: 16px;
+}
+.race-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px 24px;
+  align-items: end;
+}
+.podium {
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: color-mix(in oklab, var(--done) 14%, transparent);
+}
+
+.race-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+.lane {
+  gap: 10px;
+  padding: 14px;
+  transition: border-color 0.2s ease;
+}
+.lane.winner {
+  border-color: var(--done);
+}
+.lane-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+.lane-head h3 {
+  font-size: 16px;
+}
+.lane-canvas {
+  height: 150px;
+  background: var(--bg);
+}
+.lane-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.lane-stats .total {
+  margin-left: auto;
+  color: var(--text);
+  font-weight: 600;
+}
+.rank {
+  font-size: 22px;
+  line-height: 1;
+}
+.icon-button.listen {
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+}
+.icon-button.listen.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+}

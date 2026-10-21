@@ -1,0 +1,143 @@
+.cron-editor {
+  gap: 12px;
+}
+.cron-input {
+  font: 600 24px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  width: 100%;
+  letter-spacing: 0.04em;
+}
+.cron-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.cron-input.invalid {
+  border-color: var(--cat-games);
+}
+.cron-fields {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+}
+@media (max-width: 560px) {
+  .cron-fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.cron-field {
+  display: grid;
+  gap: 2px;
+  text-align: center;
+}
+.cron-field input {
+  font: 600 16px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  text-align: center;
+  color: var(--text);
+  background: color-mix(in oklab, var(--cat) 10%, var(--bg));
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 4px;
+  min-width: 0;
+}
+.cron-field.invalid input {
+  border-color: var(--cat-games);
+  background: color-mix(in oklab, var(--cat-games) 12%, var(--bg));
+}
+.cron-field-name {
+  font-size: 12.5px;
+  font-weight: 500;
+}
+.cron-field-hint {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.cron-sentence .sentence {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.cron-sentence .sentence.error {
+  color: var(--cat-games);
+  font-size: 17px;
+}
+
+.cron-bottom {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .cron-bottom {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.cron-bottom h3 {
+  font-size: 15px;
+}
+.cron-bottom select {
+  max-width: 220px;
+}
+.runs {
+  margin: 0;
+  padding-left: 22px;
+  display: grid;
+  gap: 6px;
+}
+.runs li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 12px;
+  font-variant-numeric: tabular-nums;
+}
+.runs li:first-child .mono {
+  font-weight: 700;
+}
+
+.cal-title {
+  min-width: 140px;
+  text-align: center;
+}
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 4px;
+}
+.cal-head {
+  text-align: center;
+  font-size: 11px;
+  color: var(--muted);
+}
+.cal-day {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  aspect-ratio: 1.15;
+  border-radius: 8px;
+  background: var(--bg);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+.cal-day small {
+  font-size: 9.5px;
+  opacity: 0.8;
+}
+.cal-day.runs {
+  background: color-mix(in oklab, var(--cat) 35%, var(--surface));
+  font-weight: 600;
+}
+.cal-day.today span {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.cal-day.next {
+  outline: 2px solid var(--cat);
+  outline-offset: -2px;
+}

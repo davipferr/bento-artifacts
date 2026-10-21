@@ -1,0 +1,68 @@
+.ls-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .ls-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.ls-stage {
+  padding: 12px;
+}
+.ls-canvas {
+  height: clamp(360px, 64vh, 640px);
+  background: var(--bg);
+}
+.ls-rules {
+  gap: 12px;
+}
+.ls-field {
+  display: grid;
+  gap: 4px;
+  font-size: 14px;
+}
+.ls-field input,
+.ls-field textarea {
+  font: 14px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 10px;
+  resize: vertical;
+}
+.ls-field textarea.invalid {
+  border-color: var(--cat-games);
+}
+.ls-error {
+  margin: 0;
+  color: var(--cat-games);
+}
+.ls-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 0;
+}
+.ls-stats div {
+  background: var(--chip);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+.ls-stats dt {
+  font-size: 11.5px;
+  color: var(--muted);
+}
+.ls-stats dd {
+  margin: 2px 0 0;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.ls-preview {
+  margin: 0;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}

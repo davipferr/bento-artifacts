@@ -1,0 +1,80 @@
+.path-toolbar {
+  gap: 16px;
+}
+.path-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px 24px;
+  align-items: end;
+}
+
+.path-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .path-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.path-board {
+  padding: 12px;
+  /* Canvas colours, built from the global theme tokens. */
+  --wall: var(--muted);
+  --weight: var(--cat-tools);
+  --visited: var(--accent);
+  --frontier: var(--cat-generative);
+  --path: var(--compare);
+  --start: var(--done);
+  --goal: var(--swap);
+}
+.path-canvas {
+  height: auto;
+  cursor: crosshair;
+  touch-action: none;
+  border-radius: 6px;
+}
+.path-status {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+.swatch.round {
+  border-radius: 50%;
+}
+
+.path-compare h3 {
+  font-size: 15px;
+}
+.path-compare table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  font-variant-numeric: tabular-nums;
+}
+.path-compare th {
+  text-align: left;
+  font-weight: 500;
+  color: var(--muted);
+  font-size: 12px;
+  padding: 4px 6px;
+}
+.path-compare td {
+  padding: 6px;
+  border-top: 1px solid var(--border);
+}
+.path-compare th:not(:first-child),
+.path-compare td:not(:first-child) {
+  text-align: right;
+}
+.path-compare tbody tr {
+  cursor: pointer;
+}
+.path-compare tr.selected td {
+  background: color-mix(in oklab, var(--accent) 12%, transparent);
+}
+.path-compare td.best {
+  color: var(--done);
+  font-weight: 600;
+}

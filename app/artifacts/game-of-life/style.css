@@ -1,0 +1,79 @@
+.gol-toolbar {
+  gap: 12px;
+}
+.gol-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .gol-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.gol-stage {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.gol-canvas {
+  display: block;
+  width: 100%;
+  height: clamp(340px, 64vh, 640px);
+  touch-action: none;
+  cursor: cell;
+}
+.gol-canvas.tool-stamp {
+  cursor: copy;
+}
+.gol-canvas.tool-pan {
+  cursor: grab;
+}
+.gol-side {
+  gap: 12px;
+}
+.gol-side p {
+  margin: 0;
+}
+.gol-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 0;
+}
+.gol-stats div {
+  background: var(--chip);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+.gol-stats dt {
+  font-size: 11.5px;
+  color: var(--muted);
+}
+.gol-stats dd {
+  margin: 2px 0 0;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.gol-spark {
+  width: 100%;
+  height: 56px;
+  display: block;
+}
+.gol-rule {
+  display: grid;
+  gap: 4px;
+  font-size: 14px;
+}
+.gol-rule input {
+  font: 15px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+.gol-rule input.invalid {
+  border-color: var(--cat-games);
+}

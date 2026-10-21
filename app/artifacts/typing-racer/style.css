@@ -1,0 +1,152 @@
+.tr-toolbar {
+  gap: 12px;
+}
+.tr-stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 22px;
+  font-variant-numeric: tabular-nums;
+}
+.tr-stats strong {
+  font-size: 20px;
+}
+.ghost-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  border: 2px solid var(--cat-sound);
+  vertical-align: -1px;
+}
+
+.tr-board {
+  position: relative;
+  cursor: text;
+  min-height: 160px;
+  transition: border-color 0.15s;
+}
+.tr-board.focused {
+  border-color: var(--cat);
+}
+.tr-input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  resize: none;
+  cursor: text;
+}
+.tr-text {
+  margin: 0;
+  font: 22px/1.75 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  pointer-events: none;
+}
+.tr-board.code .tr-text {
+  font-size: 18px;
+}
+.tr-text .pending {
+  color: var(--muted);
+  opacity: 0.75;
+}
+.tr-text .correct {
+  color: var(--text);
+}
+.tr-text .wrong {
+  color: #fff;
+  background: var(--cat-games);
+  border-radius: 3px;
+}
+.tr-text .cursor {
+  box-shadow: inset 2px 0 0 var(--cat);
+  animation: tr-blink 1s steps(1) infinite;
+}
+.tr-board:not(.focused) .tr-text .cursor {
+  animation: none;
+}
+.tr-text .ghost {
+  outline: 2px solid var(--cat-sound);
+  outline-offset: -1px;
+  border-radius: 3px;
+}
+.tr-text .nl {
+  opacity: 0.4;
+  font-size: 0.7em;
+}
+@keyframes tr-blink {
+  50% {
+    box-shadow: none;
+  }
+}
+.tr-hint {
+  position: absolute;
+  right: 14px;
+  bottom: 10px;
+  font-size: 12px;
+  color: var(--muted);
+  pointer-events: none;
+}
+
+.tr-result {
+  gap: 18px;
+}
+.tr-result-head {
+  display: grid;
+  gap: 8px;
+}
+.tr-big {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1;
+}
+.tr-badge {
+  margin-left: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--cat);
+  color: var(--bg);
+  vertical-align: 10px;
+}
+.tr-result-body {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 20px;
+}
+@media (max-width: 760px) {
+  .tr-result-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.tr-result h3 {
+  font-size: 15px;
+}
+.tr-result p {
+  margin: 2px 0 8px;
+}
+.heatmap {
+  width: 100%;
+  max-width: 560px;
+  display: block;
+}
+.heatmap text {
+  font: 600 13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  fill: var(--text);
+  pointer-events: none;
+}
+.heat-error {
+  fill: var(--cat-games);
+  stroke: var(--surface);
+  stroke-width: 1.5;
+}
+.tr-slow {
+  margin: 8px 0 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 4px;
+  font-variant-numeric: tabular-nums;
+}

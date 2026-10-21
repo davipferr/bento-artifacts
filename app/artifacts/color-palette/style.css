@@ -1,0 +1,184 @@
+.palette-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+.palette-bottom {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .palette-top,
+  .palette-bottom {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+/* Artifact stylesheets stay loaded after leaving the page, so every selector here is scoped. */
+.palette-top h3,
+.palette-mid h3,
+.palette-bottom h3 {
+  font-size: 15px;
+}
+
+.wheel-box {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 1;
+  justify-self: center;
+}
+.color-wheel,
+.wheel-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.wheel-overlay {
+  cursor: crosshair;
+  touch-action: none;
+}
+.wheel-overlay .spoke {
+  stroke: rgba(255, 255, 255, 0.7);
+  stroke-width: 1;
+}
+.wheel-overlay .marker {
+  stroke: #fff;
+  stroke-width: 2;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+}
+.wheel-overlay .marker.base {
+  stroke-width: 3;
+}
+
+.base-card {
+  gap: 12px;
+}
+.base-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+.base-swatch {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  flex: none;
+}
+.hex-input {
+  display: grid;
+  gap: 4px;
+  font-size: 14px;
+  flex: 1;
+}
+.hex-input input {
+  font: 15px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 10px;
+  min-width: 0;
+}
+.base-card .segmented .chip {
+  text-transform: capitalize;
+}
+
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+.swatch-big {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  min-height: 120px;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  text-align: left;
+}
+.swatch-big:hover {
+  filter: none;
+  transform: translateY(-2px);
+}
+.swatch-value {
+  font-size: 14px;
+  font-weight: 600;
+}
+.swatch-contrast {
+  display: grid;
+  font-size: 11.5px;
+  opacity: 0.85;
+}
+.scales {
+  display: grid;
+  gap: 4px;
+}
+.scale-row {
+  display: grid;
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+  gap: 3px;
+}
+.scale-cell {
+  height: 34px;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  font-size: 10.5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.contrast-scroll {
+  overflow-x: auto;
+}
+.contrast-grid {
+  border-collapse: separate;
+  border-spacing: 3px;
+  font-size: 12px;
+}
+.contrast-grid th {
+  font-weight: 500;
+  color: var(--muted);
+  white-space: nowrap;
+  text-align: left;
+  padding: 2px 4px;
+}
+.contrast-grid td {
+  min-width: 70px;
+  padding: 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  border: 1px solid var(--border);
+}
+.contrast-grid strong {
+  font-size: 15px;
+}
+.level {
+  font-variant-numeric: tabular-nums;
+}
+.level-fail {
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+
+.export-code {
+  margin: 0;
+  max-height: 320px;
+  overflow: auto;
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  font: 12px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+.palette-bottom .primary {
+  justify-self: start;
+}

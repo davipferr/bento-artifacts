@@ -1,0 +1,132 @@
+.ez-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .ez-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.ez-side {
+  display: grid;
+  gap: 16px;
+}
+.ez-side h3 {
+  font-size: 15px;
+}
+
+.ez-svg {
+  width: 100%;
+  max-width: 420px;
+  justify-self: center;
+  touch-action: none;
+  user-select: none;
+}
+.ez-grid line {
+  stroke: var(--grid);
+  stroke-width: 1;
+}
+.ez-unit {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 1.5;
+}
+.ez-linear {
+  stroke: var(--muted);
+  stroke-dasharray: 4 4;
+  opacity: 0.6;
+}
+.ez-axis {
+  font-size: 11px;
+  fill: var(--muted);
+}
+.ez-curve {
+  fill: none;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+}
+.ez-curve.faint {
+  stroke-width: 2;
+  opacity: 0.45;
+}
+.ez-time {
+  stroke: var(--muted);
+  stroke-width: 1;
+  opacity: 0.5;
+}
+.ez-arm {
+  stroke: var(--muted);
+  stroke-width: 1.5;
+}
+.ez-handle {
+  stroke: var(--surface);
+  stroke-width: 3;
+  cursor: grab;
+}
+.ez-handle:active {
+  cursor: grabbing;
+}
+
+.ez-input {
+  display: grid;
+  gap: 4px;
+}
+.ez-input input {
+  font: 14px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 7px 10px;
+}
+.ez-input.invalid input {
+  border-color: var(--cat-games);
+}
+
+.ez-track {
+  position: relative;
+  height: 30px;
+  margin: 0 4px;
+  border-radius: 999px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+}
+.ez-ball {
+  position: absolute;
+  top: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+}
+.ez-demos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+.ez-demos > div {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 12px 6px 8px;
+  border-radius: 10px;
+  background: var(--bg);
+}
+.ez-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 9px;
+  background: var(--c);
+}
+.ez-bar {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.ez-bar span {
+  height: 14px;
+  border-radius: 7px;
+  background: var(--c);
+}

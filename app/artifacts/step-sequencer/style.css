@@ -1,0 +1,85 @@
+.seq-toolbar {
+  gap: 16px;
+}
+.seq-play {
+  min-width: 96px;
+}
+.seq-sliders {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px 24px;
+  align-items: end;
+}
+
+.seq-grid-card {
+  overflow-x: auto;
+}
+.seq-grid {
+  display: grid;
+  gap: 6px;
+  min-width: 560px;
+  user-select: none;
+}
+.seq-row {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+}
+.seq-name {
+  font-size: 13px;
+  padding: 6px 8px;
+  text-align: left;
+  transition: background 0.08s;
+}
+.seq-row.muted .seq-name {
+  opacity: 0.45;
+  text-decoration: line-through;
+}
+.seq-name.hit {
+  background: var(--cat);
+  border-color: var(--cat);
+  color: var(--bg);
+}
+.seq-steps {
+  display: grid;
+  grid-template-columns: repeat(16, minmax(0, 1fr));
+  gap: 4px;
+}
+.seq-cell {
+  aspect-ratio: 1;
+  padding: 0;
+  border-radius: 6px;
+  min-width: 0;
+  touch-action: none;
+}
+/* A little extra space before each beat makes the four groups readable. */
+.seq-steps > :nth-child(4n + 1):not(:first-child) {
+  margin-left: 6px;
+}
+.seq-cell.beat:not(.on) {
+  background: color-mix(in oklab, var(--chip) 70%, var(--border));
+}
+.seq-cell.on {
+  background: var(--cat);
+  border-color: var(--cat);
+}
+.seq-cell.now {
+  outline: 2px solid var(--text);
+  outline-offset: -2px;
+}
+.seq-cell.on.now {
+  filter: brightness(1.25);
+}
+.seq-row.muted .seq-cell.on {
+  opacity: 0.35;
+}
+.seq-numbers span {
+  text-align: center;
+  font-size: 11px;
+  color: var(--muted);
+}
+.seq-numbers span.now {
+  color: var(--text);
+  font-weight: 700;
+}

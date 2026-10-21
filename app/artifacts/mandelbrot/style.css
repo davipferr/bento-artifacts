@@ -1,0 +1,73 @@
+.mb-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .mb-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.mb-stage {
+  position: relative;
+  height: clamp(360px, 66vh, 680px);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #000;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+.mb-stage:active {
+  cursor: grabbing;
+}
+.mb-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.mb-cpu {
+  visibility: hidden;
+}
+.mb-cpu.visible {
+  visibility: visible;
+}
+.mb-badges {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  display: flex;
+  gap: 6px;
+  pointer-events: none;
+}
+.mb-badge {
+  font: 12px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+.mb-badge.cpu {
+  background: color-mix(in oklab, var(--cat) 80%, black);
+}
+.mb-side {
+  display: grid;
+  gap: 16px;
+}
+.mb-side h3 {
+  font-size: 15px;
+}
+.mb-side p {
+  margin: 0;
+}
+.mb-julia {
+  width: 100%;
+  aspect-ratio: 1;
+  display: block;
+  border-radius: 10px;
+  background: #000;
+}

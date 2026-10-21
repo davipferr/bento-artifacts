@@ -1,0 +1,50 @@
+.flow-toolbar {
+  gap: 12px;
+}
+.palette-chip {
+  display: inline-flex;
+  gap: 3px;
+  padding: 6px 8px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+}
+.palette-chip.active {
+  border-color: var(--text);
+}
+.palette-chip i {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.flow-stage {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.flow-canvas,
+.flow-overlay {
+  display: block;
+  width: 100%;
+  height: clamp(320px, 62vh, 640px);
+}
+.flow-canvas {
+  cursor: crosshair;
+  touch-action: none;
+}
+.flow-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.flow-controls {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px 24px;
+  align-items: end;
+}
+.flow-checks {
+  display: grid;
+  gap: 6px;
+}

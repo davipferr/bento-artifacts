@@ -1,0 +1,151 @@
+.wheel-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .wheel-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.wheel-side {
+  display: grid;
+  gap: 16px;
+}
+.wheel-side h3 {
+  font-size: 15px;
+}
+.wheel {
+  width: 100%;
+  max-width: 520px;
+  justify-self: center;
+  display: block;
+  user-select: none;
+}
+
+.spin,
+.upright {
+  transition: transform 0.7s cubic-bezier(0.3, 1.25, 0.5, 1);
+}
+
+.seg {
+  cursor: pointer;
+  outline: none;
+}
+.seg path {
+  fill: var(--chip);
+  stroke: var(--surface);
+  stroke-width: 2;
+  transition: fill 0.2s;
+}
+.seg.inner path {
+  fill: color-mix(in oklab, var(--chip) 70%, var(--bg));
+}
+.seg:hover path,
+.seg:focus-visible path {
+  fill: color-mix(in oklab, var(--cat) 25%, var(--chip));
+}
+.seg.in-key path {
+  fill: color-mix(in oklab, var(--cat) 30%, var(--surface));
+}
+.seg.tonic path {
+  fill: color-mix(in oklab, var(--cat) 60%, var(--surface));
+}
+.seg.sounding path {
+  fill: var(--cat);
+}
+.seg text {
+  text-anchor: middle;
+  fill: var(--text);
+  pointer-events: none;
+}
+.seg-name {
+  font-size: 17px;
+  font-weight: 600;
+}
+.seg.inner .seg-name {
+  font-size: 13px;
+}
+.seg-roman {
+  font: 600 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  opacity: 0.75;
+}
+.seg.sounding text {
+  fill: var(--bg);
+}
+.wheel-hub {
+  fill: var(--surface);
+  stroke: var(--border);
+}
+.hub-key,
+.hub-mode,
+.hub-acc {
+  text-anchor: middle;
+  fill: var(--text);
+}
+.hub-key {
+  font-size: 30px;
+  font-weight: 700;
+}
+.hub-mode {
+  font-size: 13px;
+  fill: var(--muted);
+}
+.hub-acc {
+  font-size: 10.5px;
+  fill: var(--muted);
+}
+.wheel-pointer {
+  fill: var(--cat);
+}
+
+.chord-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(76px, 1fr));
+  gap: 8px;
+}
+.chord-btn {
+  display: grid;
+  gap: 2px;
+  padding: 8px 6px;
+  text-align: center;
+  border-radius: 10px;
+  transition:
+    background 0.15s,
+    transform 0.15s;
+}
+.chord-btn.q-maj {
+  background: color-mix(in oklab, var(--cat) 18%, var(--chip));
+}
+.chord-btn.q-dim {
+  border-style: dashed;
+}
+.chord-btn.sounding {
+  background: var(--cat);
+  color: var(--bg);
+  transform: translateY(-2px);
+}
+.chord-roman {
+  font: 600 12px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  opacity: 0.7;
+}
+.chord-name {
+  font-size: 17px;
+  font-weight: 600;
+}
+.progress-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+}
+.progress-line span {
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: var(--chip);
+}
+.progress-line span.now {
+  background: var(--cat);
+  color: var(--bg);
+}

@@ -1,0 +1,51 @@
+.fd-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(260px, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .fd-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.fd-stage {
+  padding: 12px;
+}
+.fd-canvas {
+  height: clamp(340px, 62vh, 600px);
+}
+.fd-canvas.drawing {
+  cursor: crosshair;
+  touch-action: none;
+}
+.fd-side {
+  gap: 14px;
+}
+.fd-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 0;
+}
+.fd-stats div {
+  background: var(--chip);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+.fd-stats dt {
+  font-size: 11.5px;
+  color: var(--muted);
+}
+.fd-stats dd {
+  margin: 2px 0 0;
+  font-weight: 600;
+  font-size: 14px;
+}
+.fd-spectrum {
+  height: 80px;
+  margin-top: 6px;
+}
+.fd-side p {
+  margin: 0;
+}
