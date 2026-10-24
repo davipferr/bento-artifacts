@@ -1,0 +1,141 @@
+.ft-controls {
+  gap: 8px;
+}
+.ft-controls p {
+  margin: 0;
+}
+.ft-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .ft-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.ft-arena-card {
+  gap: 10px;
+}
+.ft-arena {
+  position: relative;
+  height: 420px;
+  border-radius: 10px;
+  background: var(--bg);
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+  cursor: crosshair;
+}
+.ft-empty {
+  display: grid;
+  place-items: center;
+  height: 100%;
+}
+.ft-guide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.ft-guide line {
+  stroke: var(--grid);
+  stroke-width: 2;
+  stroke-dasharray: 3 5;
+}
+.ft-start,
+.ft-target,
+.ft-mark {
+  position: absolute;
+  translate: -50% -50%;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.ft-start {
+  display: grid;
+  place-items: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--muted);
+  background: var(--chip);
+  border: 2px solid var(--border);
+}
+.ft-start[data-active] {
+  border-color: var(--text);
+  color: var(--text);
+}
+.ft-target {
+  border: 2px dashed color-mix(in oklab, var(--cat) 60%, transparent);
+}
+.ft-target[data-live] {
+  border: none;
+  background: var(--cat);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--cat) 25%, transparent);
+}
+.ft-mark {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--cat-generative);
+  animation: ft-ripple 0.6s ease-out forwards;
+}
+.ft-mark.miss {
+  border-color: var(--cat-games);
+  border-radius: 3px;
+  rotate: 45deg;
+}
+@keyframes ft-ripple {
+  from {
+    scale: 0.3;
+    opacity: 1;
+  }
+  to {
+    scale: 1.4;
+    opacity: 0;
+  }
+}
+
+.ft-results {
+  gap: 12px;
+}
+.ft-chart {
+  width: 100%;
+  height: auto;
+}
+.ft-chart text {
+  font-size: 10.5px;
+  fill: var(--muted);
+}
+.ft-gridline {
+  stroke: var(--grid);
+}
+.ft-fit {
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-dasharray: 5 4;
+}
+.ft-dot {
+  fill: currentColor;
+  fill-opacity: 0.7;
+}
+.ft-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+}
+.ft-stats div {
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: var(--bg);
+}
+.ft-stats dt {
+  font-size: 12px;
+  color: var(--muted);
+}
+.ft-stats dd {
+  margin: 2px 0 0;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}

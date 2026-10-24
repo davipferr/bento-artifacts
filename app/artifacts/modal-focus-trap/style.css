@@ -1,0 +1,266 @@
+.mf-controls {
+  gap: 10px;
+}
+.mf-controls p {
+  margin: 0;
+}
+.mf-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 6px 18px;
+}
+.mf-controls kbd,
+.mf-controls code {
+  font-size: 12px;
+}
+.mf-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .mf-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* The fake app. Dialogs and the overlay are positioned inside it, not over the real page. */
+.mf-screen {
+  position: relative;
+  min-height: 440px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  overflow: hidden;
+}
+.mf-page {
+  display: grid;
+  align-content: start;
+}
+.mf-page[inert] {
+  filter: saturate(0.6);
+}
+.mf-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+}
+.mf-nav strong {
+  margin-right: 8px;
+}
+.mf-link {
+  background: none;
+  border-color: transparent;
+  padding: 4px 8px;
+  color: var(--accent);
+}
+.mf-search {
+  margin-left: auto;
+  font: inherit;
+  font-size: 13px;
+  padding: 5px 10px;
+  width: 150px;
+  max-width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+}
+.mf-main {
+  display: grid;
+  gap: 14px;
+  padding: 22px 18px;
+}
+.mf-hero {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.mf-avatar {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  font-size: 28px;
+  border-radius: 50%;
+  background: var(--chip);
+}
+.mf-avatar.small {
+  width: 34px;
+  height: 34px;
+  font-size: 18px;
+}
+
+.mf-backdrop {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgb(0 0 0 / 0.28);
+  animation: mf-fade 0.15s ease;
+}
+.mf-backdrop:not([data-top]) {
+  background: rgb(0 0 0 / 0.12);
+}
+.mf-dialog {
+  display: grid;
+  gap: 12px;
+  width: min(340px, 100%);
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: 0 24px 60px -20px rgb(0 0 0 / 0.5);
+  animation: mf-pop 0.18s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+}
+.mf-dialog.depth-1 {
+  transform: translate(28px, 24px);
+}
+.mf-dialog.depth-2 {
+  transform: translate(56px, 72px);
+}
+.mf-dialog header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mf-dialog h3 {
+  margin: 0;
+  font-size: 16px;
+}
+.mf-dialog footer {
+  margin-top: 4px;
+}
+.mf-x {
+  padding: 2px 8px;
+  background: none;
+  border-color: transparent;
+}
+.mf-field {
+  display: grid;
+  gap: 4px;
+  font-size: 13px;
+}
+.mf-field input {
+  font: inherit;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+}
+.mf-avatars {
+  display: flex;
+  gap: 8px;
+}
+.mf-pick {
+  font-size: 22px;
+  padding: 6px 10px;
+}
+.mf-pick.on {
+  border-color: var(--cat);
+  background: color-mix(in oklab, var(--cat) 18%, var(--surface));
+}
+.mf-danger {
+  background: var(--cat-games);
+  border-color: var(--cat-games);
+  color: #fff;
+}
+.mf-screen :focus-visible {
+  outline: 2.5px solid var(--cat);
+  outline-offset: 2px;
+}
+@keyframes mf-fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes mf-pop {
+  from {
+    opacity: 0;
+    scale: 0.96;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mf-backdrop,
+  .mf-dialog {
+    animation: none;
+  }
+}
+
+/* Tab-order overlay */
+.mf-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  overflow: visible;
+}
+.mf-edge {
+  fill: none;
+  stroke: var(--cat);
+  stroke-width: 1.5;
+  stroke-opacity: 0.6;
+}
+.mf-edge.wrap {
+  stroke-dasharray: 5 4;
+}
+#mf-arrow path {
+  fill: var(--cat);
+}
+.mf-badge circle {
+  fill: var(--surface);
+  stroke: var(--cat);
+  stroke-width: 1.5;
+}
+.mf-badge text {
+  font-size: 10px;
+  font-weight: 700;
+  fill: var(--text);
+}
+.mf-badge.focused circle {
+  fill: var(--cat);
+}
+.mf-badge.focused text {
+  fill: var(--surface);
+}
+
+.mf-log {
+  gap: 10px;
+}
+.mf-warn-count {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--cat-games);
+}
+.mf-entries {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 3px;
+  max-height: 360px;
+  overflow: auto;
+}
+.mf-entries li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: var(--bg);
+}
+.mf-entries li:first-child:not(.muted) {
+  outline: 1px solid color-mix(in oklab, var(--cat) 50%, transparent);
+}
+.mf-entries li.warn {
+  background: color-mix(in oklab, var(--cat-games) 16%, var(--bg));
+}
+.mf-entries li.warn .muted {
+  color: var(--cat-games);
+}

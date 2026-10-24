@@ -201,3 +201,17 @@ UI, UX and animation. The animation pieces get their own category, **Motion & An
 | 12 | **Latency Lab** (ui): 0/100/300/1000 ms × five feedback tricks, Nielsen's limits, 12-round blind test | ✅ done |
 | 12 | **Infinite Scroll vs Pagination** (ui): one feed three ways, find-go-back-find task with timings, scroll restoration toggle | ✅ done |
 | 12 | **Stepper / Wizard** (ui): per-step validation and focus, direction-aware slides, slug follow, password meter, save & resume | ✅ done |
+
+---
+
+# Batch 5
+
+UX laws you can measure on yourself, plus one motion piece.
+
+| Step | Scope | Status |
+|---|---|---|
+| 13 | **Modal & Focus Trap** (ui): three nested dialogs, numbered Tab-order overlay, trap / inert / initial focus / focus return switches, focus log, positive-tabindex anti-pattern | ✅ done |
+| 13 | **Fitts's Law Target Lab** (ui): 27 timed targets (3 widths × 3 distances), fit of a + b·log₂(D/W+1) per pointer, throughput, effective width, predictions | ✅ done |
+| 13 | **Gestalt Playground** (ui): one dot field, six competing cues (proximity, colour, shape, region, connectedness, common fate), a ranked model, label-spacing form demo | ✅ done |
+| 13 | **Miller's 7±2 / Chunking** (ui): recall test of 6–12 characters raw vs chunked, accuracy curves and span, plus a caret-safe grouped input for cards, phones and IBANs | ✅ done |
+| 13 | **Parallax Depth Card** (motion): pointer/gyro tilt, six layers in preserve-3d vs a 2D shift fallback, frame-rate independent smoothing, glare, exploded view | ✅ done |

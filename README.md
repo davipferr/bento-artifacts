@@ -75,6 +75,10 @@ React 19 · TypeScript · Vite · Canvas 2D · SVG · Web Audio · WebGL2 · Vit
 | Latency Lab | The same button at 0–1000 ms with press, spinner, skeleton or optimistic feedback, plus a blind test |
 | Infinite Scroll vs Pagination | One feed three ways; find an item, go back, find the next, and see which pattern keeps your place |
 | Stepper / Wizard | Multi-step form with per-step validation, directional slides, a password meter and save-and-resume drafts |
+| Modal & Focus Trap | Nested dialogs with a numbered Tab-order overlay; switch off the trap, inert or focus return and watch focus escape |
+| Fitts's Law Target Lab | 27 timed targets, your own a + b·log₂(D/W+1) fit per pointer, throughput in bits/s and effective width |
+| Gestalt Playground | Six grouping cues competing over one dot grid, a ranked model of what you see, and label spacing in a form |
+| Miller's 7 ± 2 · Chunking | Recall raw vs chunked strings of 6–12 characters against the 7 ± 2 band, plus a caret-safe grouped input |
 
 **Motion & Animation**
 
@@ -83,6 +87,7 @@ React 19 · TypeScript · Vite · Canvas 2D · SVG · Web Audio · WebGL2 · Vit
 | Animation Principles Lab | Disney's 12 principles as switches on one hopping character, against a version with all of them off |
 | Morphing Icons | Play ↔ pause, menu ↔ close and friends morphing point by point, in slow motion with the points shown |
 | Skeleton → Content | Hard cut, crossfade, staggered and blur-up reveals side by side, with a layout-shift counter |
+| Parallax Depth Card | Pointer- or gyro-driven tilt over six translateZ layers, a 2D fallback, glare and an exploded side view |
 
 The original idea list and the build plan are in [IDEAS.md](IDEAS.md).
 
