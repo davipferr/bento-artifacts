@@ -25,6 +25,7 @@ React 19 · TypeScript · Vite · Canvas 2D · SVG · Web Audio · WebGL2 · Vit
 | Pathfinding Playground | BFS, Dijkstra, A* and greedy on a paintable grid with weights; live re-solve and a comparison table |
 | Regex Railroad | A regex parser drawn as a railroad diagram; hover a piece to see its source and its captures |
 | Huffman Coding | The tree built merge by merge, codes vs UTF-8 / fixed width / entropy, hover to trace bits |
+| Git Graph Playground | A toy Git in a terminal: branches, merge, rebase, reset, push; the commit graph animates and orphans fade |
 
 **Sound & Music**
 
@@ -58,6 +59,17 @@ React 19 · TypeScript · Vite · Canvas 2D · SVG · Web Audio · WebGL2 · Vit
 | Game of Life Lab | Sparse, edgeless Life with 8 B/S rules, RLE pattern stamps, pan/zoom and a population graph |
 | Typing Racer | Prose, code and pt-BR passages; WPM, accuracy, a ghost of your best run and a slow-key heatmap |
 | Pixel Physics Sandbox | Falling-sand cellular automaton: sand, water, oil, wood, fire, smoke, plants, walls and scenes |
+
+**Interface & UI**
+
+| Artifact | What it shows |
+| --- | --- |
+| OTP / PIN Input | Code boxes that auto-advance, spread a paste, backspace across, shake on a wrong code; with a keystroke log |
+| Swipe Deck | Throwable cards: velocity from pointer samples, flick or distance to decide, springs back, physics overlay |
+| Command Palette | ⌘K fuzzy launcher (DP alignment, score breakdown), nested pages, recents, jumps to every artifact |
+| File Tree Explorer | WAI-ARIA tree with type-ahead, inline rename, drag-to-move with auto-expand, delete with undo |
+| Notification Center | Bell with a 99+ badge, banners, grouped and stacked notices, swipe to dismiss, do not disturb |
+| Breakpoint Visualizer | Drag a fake viewport from 320 to 1920px; Tailwind/Bootstrap/Material bands and live media queries |
 
 The original idea list and the build plan are in [IDEAS.md](IDEAS.md).
 

@@ -168,3 +168,19 @@ A falling-sand toy: sand, water, fire, wood, smoke and plant interact cell by ce
 | 10 | **Chaos Pendulums** (math): RK4 double-pendulum ensemble, log-scale divergence chart, energy check | ✅ done |
 | 10 | **Boids Flock** (generative): Reynolds' three rules + wander, spatial grid, hawk/bread pointer | ✅ done |
 | 10 | **Huffman Coding** (algorithms): step-by-step tree build, code table, bit stream, entropy bound | ✅ done |
+
+---
+
+# Batch 3
+
+Six of these are interface pieces, so they get a new category, **Interface & UI** (`ui`).
+
+| Step | Scope | Status |
+|---|---|---|
+| 11 | **Git Graph Playground** (algorithms): toy Git (commit, branch, merge, rebase, reset, cherry-pick, revert, push, reflog), lane layout, animated SVG graph, scenarios | ✅ done |
+| 11 | **OTP / PIN Input** (ui): auto-advance, paste/autofill spread, backspace across boxes, shake on error, PIN masking, keystroke log | ✅ done |
+| 11 | **Swipe Deck** (ui): pointer-sample velocity, distance-or-flick decision, grab-aware tilt, spring snap-back, physics overlay, undo | ✅ done |
+| 11 | **Command Palette** (ui): ⌘K launcher, DP fuzzy matching with score breakdown, nested pages, recents, jump to any artifact | ✅ done |
+| 11 | **File Tree Explorer** (ui): WAI-ARIA tree keys + type-ahead, inline rename, drag to move with auto-expand, delete with undo | ✅ done |
+| 11 | **Notification Center** (ui): badge with 99+, ring + banner, group by app/time, stacks, swipe to dismiss, do not disturb | ✅ done |
+| 11 | **Breakpoint Visualizer** (ui): resizable frame 320–1920px, Tailwind/Bootstrap/Material bands, live mobile-first stylesheet | ✅ done |

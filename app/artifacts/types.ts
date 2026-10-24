@@ -30,6 +30,7 @@ export const categories = {
   generative: 'Generative Art',
   tools: 'Everyday Tools',
   games: 'Games & Toys',
+  ui: 'Interface & UI',
 } as const
 
 export type Category = keyof typeof categories

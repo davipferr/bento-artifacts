@@ -1,0 +1,173 @@
+.gg-top {
+  gap: 12px;
+}
+.gg-graph {
+  overflow-x: auto;
+  border-radius: 10px;
+  background:
+    radial-gradient(circle, var(--grid) 1px, transparent 1.5px) 0 0 / 18px 18px,
+    var(--bg);
+  min-height: 160px;
+}
+.gg-graph svg {
+  display: block;
+}
+.gg-edge {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+.gg-edge.orphan {
+  stroke-dasharray: 4 5;
+  stroke-width: 2;
+}
+.gg-commit {
+  cursor: pointer;
+}
+.gg-commit circle:first-child {
+  stroke-width: 3;
+  transition: r 0.15s ease;
+}
+.gg-commit:hover circle:first-child {
+  r: 15;
+}
+.gg-commit.orphan circle:first-child {
+  stroke-dasharray: 3 3;
+}
+.gg-commit.head circle:first-child {
+  filter: drop-shadow(0 0 6px color-mix(in oklab, var(--text) 35%, transparent));
+}
+.gg-merge-dot {
+  fill: var(--surface);
+}
+.gg-id {
+  font: 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  fill: var(--muted);
+  text-anchor: middle;
+}
+.gg-label rect {
+  stroke-width: 1.5;
+}
+.gg-label text {
+  font: 600 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  text-anchor: middle;
+}
+.gg-label.branch rect {
+  fill: var(--cat);
+  stroke: var(--cat);
+}
+.gg-label.branch text {
+  fill: var(--accent-text);
+}
+.gg-label.head rect {
+  fill: var(--text);
+  stroke: var(--text);
+}
+.gg-label.head text {
+  fill: var(--bg);
+}
+.gg-label.remote rect {
+  fill: var(--surface);
+  stroke: var(--muted);
+  stroke-dasharray: 3 2;
+}
+.gg-label.remote text {
+  fill: var(--text);
+}
+.gg-caption {
+  min-height: 28px;
+}
+
+.gg-bottom {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .gg-bottom {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.gg-terminal {
+  gap: 8px;
+  background: #14161b;
+  border-color: #14161b;
+  color: #e8eaef;
+  cursor: text;
+}
+.gg-terminal .hint {
+  color: #8b93a3;
+}
+.gg-output {
+  height: 300px;
+  overflow-y: auto;
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+.gg-line {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.gg-line.cmd {
+  color: #ffffff;
+  margin-top: 6px;
+}
+.gg-line.out {
+  color: #c1c7d3;
+}
+.gg-line.err {
+  color: #ff8787;
+}
+.gg-prompt {
+  color: #69db7c;
+  white-space: nowrap;
+}
+.gg-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px solid #2a2f3a;
+  padding-top: 10px;
+}
+.gg-input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 13.5px;
+}
+.gg-input::placeholder {
+  color: #5c6370;
+}
+
+.gg-side {
+  gap: 12px;
+}
+.gg-side h3 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.gg-changes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 4px;
+}
+.gg-changes li {
+  font: 12.5px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  padding: 3px 8px;
+  border-radius: 6px;
+  border-left: 3px solid var(--cat-tools);
+  background: color-mix(in oklab, var(--cat-tools) 12%, transparent);
+}
+.gg-changes.staged li {
+  border-left-color: var(--cat-generative);
+  background: color-mix(in oklab, var(--cat-generative) 12%, transparent);
+}

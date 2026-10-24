@@ -1,0 +1,270 @@
+.sd-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .sd-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.sd-stage-card {
+  padding: 12px;
+  gap: 8px;
+}
+.sd-stage {
+  position: relative;
+  height: 520px;
+  overflow: hidden;
+  border-radius: 10px;
+  background:
+    radial-gradient(circle at 50% 45%, color-mix(in oklab, var(--cat) 10%, transparent), transparent 65%),
+    var(--bg);
+  touch-action: none;
+  user-select: none;
+}
+@media (max-width: 560px) {
+  .sd-stage {
+    height: 440px;
+  }
+}
+
+.sd-card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 18px 40px -22px color-mix(in oklab, var(--text) 60%, transparent);
+  will-change: transform;
+}
+.sd-card.back {
+  transition: transform 0.12s ease;
+  pointer-events: none;
+}
+.sd-card.top {
+  cursor: grab;
+  z-index: 2;
+}
+.sd-card.top.dragging {
+  cursor: grabbing;
+  box-shadow: 0 28px 50px -24px color-mix(in oklab, var(--text) 70%, transparent);
+}
+.sd-card.flying {
+  z-index: 3;
+  pointer-events: none;
+}
+
+.sd-art {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 30% 25%, hsl(calc(var(--hue) + 40) 90% 72% / 0.9), transparent 60%),
+    linear-gradient(150deg, hsl(var(--hue) 80% 62%), hsl(calc(var(--hue) - 40) 70% 42%));
+}
+.sd-art span {
+  font-size: 92px;
+  filter: drop-shadow(0 8px 14px rgb(0 0 0 / 0.25));
+  pointer-events: none;
+}
+.sd-info {
+  padding: 14px 16px 16px;
+  display: grid;
+  gap: 4px;
+}
+.sd-info h3 {
+  font-size: 20px;
+}
+.sd-info p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.sd-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 4px;
+}
+.sd-tags span {
+  font-size: 11.5px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--chip);
+}
+
+.sd-stamp {
+  position: absolute;
+  top: 26px;
+  padding: 2px 12px;
+  border: 4px solid;
+  border-radius: 10px;
+  font: 800 30px/1.1 ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0.06em;
+  pointer-events: none;
+  background: rgb(255 255 255 / 0.08);
+}
+.sd-stamp.like {
+  left: 22px;
+  color: #2fb344;
+  transform: rotate(-14deg);
+}
+.sd-stamp.nope {
+  right: 22px;
+  color: #f03e3e;
+  transform: rotate(14deg);
+}
+.sd-stamp.super {
+  left: 50%;
+  top: auto;
+  bottom: 120px;
+  color: #339af0;
+  transform: translateX(-50%) rotate(-6deg);
+}
+
+.sd-physics {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+  overflow: visible;
+}
+.sd-physics text {
+  font: 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  fill: var(--muted);
+}
+.sd-threshold {
+  stroke: var(--muted);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 6;
+  opacity: 0.6;
+}
+.sd-threshold.hit {
+  stroke: var(--cat);
+  opacity: 1;
+  stroke-width: 2.5;
+}
+.sd-trail {
+  fill: none;
+  stroke: var(--cat);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.5;
+}
+.sd-grab {
+  fill: color-mix(in oklab, var(--cat) 40%, transparent);
+  stroke: var(--cat);
+  stroke-width: 2;
+}
+.sd-vector line {
+  stroke: var(--muted);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+.sd-vector marker path,
+#sd-arrow path {
+  fill: var(--muted);
+}
+.sd-vector.fast line {
+  stroke: var(--cat-generative);
+}
+.sd-vector.fast text {
+  fill: var(--cat-generative);
+  font-weight: 700;
+}
+
+.sd-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  padding: 4px 0;
+}
+.sd-round {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  padding: 0;
+  font-size: 22px;
+  background: var(--surface);
+  box-shadow: 0 6px 16px -10px color-mix(in oklab, var(--text) 60%, transparent);
+  transition: transform 0.12s ease;
+}
+.sd-round:active:not(:disabled) {
+  transform: scale(0.9);
+}
+.sd-round.nope {
+  color: #f03e3e;
+}
+.sd-round.super {
+  color: #339af0;
+  width: 46px;
+  height: 46px;
+  align-self: center;
+}
+.sd-round.like {
+  color: #2fb344;
+}
+.sd-round.undo {
+  width: 46px;
+  height: 46px;
+  align-self: center;
+  color: var(--cat-tools);
+}
+
+.sd-empty {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.sd-side {
+  gap: 14px;
+}
+.sd-readout {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 14px;
+  padding: 12px;
+  border-radius: 10px;
+  background: var(--bg);
+  font-size: 12.5px;
+}
+.sd-readout span {
+  color: var(--muted);
+}
+.sd-readout b {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+.sd-verdict {
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+.sd-verdict.right {
+  color: #2fb344;
+}
+.sd-verdict.left {
+  color: #f03e3e;
+}
+.sd-verdict.up {
+  color: #339af0;
+}
+.sd-results {
+  gap: 10px;
+}
+.sd-results .sd-verdict {
+  min-width: 56px;
+  font-size: 13px;
+}

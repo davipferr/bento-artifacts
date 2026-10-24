@@ -1,0 +1,281 @@
+.otp-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .otp-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.otp-main {
+  gap: 22px;
+  padding: 22px;
+}
+
+.otp-sms {
+  display: flex;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: color-mix(in oklab, var(--surface) 70%, var(--chip));
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px -18px color-mix(in oklab, var(--text) 50%, transparent);
+  animation: otp-drop 0.5s cubic-bezier(0.2, 1.4, 0.4, 1);
+}
+@keyframes otp-drop {
+  from {
+    transform: translateY(-14px);
+    opacity: 0;
+  }
+}
+.otp-sms-icon {
+  font-size: 22px;
+  line-height: 1.2;
+}
+.otp-sms-text {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  flex: 1;
+}
+.otp-sms-head {
+  justify-content: space-between;
+}
+.otp-sms-text p {
+  margin: 0;
+}
+.otp-code {
+  font-size: 15px;
+  letter-spacing: 0.06em;
+}
+
+.otp-panel {
+  container-type: inline-size;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 6px;
+  padding: 8px 0 4px;
+}
+.otp-boxes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 8px;
+  margin: 16px 0 4px;
+  max-width: 100%;
+}
+.otp-slot-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.otp-dash {
+  width: 12px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--border);
+}
+.otp-slot {
+  /* Shrink to fit n boxes plus gaps (and the middle dash) in narrow panels. */
+  width: min(52px, calc((100cqi - var(--n) * 8px - 24px) / var(--n)));
+  height: 62px;
+  min-width: 0;
+  text-align: center;
+  font: 600 26px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--text);
+  caret-color: transparent;
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  outline: none;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease,
+    background 0.2s ease;
+}
+@media (max-width: 560px) {
+  .otp-slot {
+    height: 48px;
+    font-size: 20px;
+  }
+  .otp-boxes,
+  .otp-slot-wrap {
+    gap: 5px;
+  }
+}
+.otp-slot::selection {
+  background: transparent;
+}
+.otp-slot.filled {
+  border-color: color-mix(in oklab, var(--cat) 45%, var(--border));
+  animation: otp-pop 0.18s ease;
+}
+@keyframes otp-pop {
+  50% {
+    transform: scale(1.08);
+  }
+}
+.otp-slot:focus {
+  border-color: var(--cat);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--cat) 22%, transparent);
+}
+/* A blinking caret in the empty focused box, since the real one is hidden. */
+.otp-slot:focus:placeholder-shown {
+  background:
+    linear-gradient(var(--cat), var(--cat)) center / 2px 45% no-repeat,
+    var(--bg);
+  animation: otp-blink 1s steps(1) infinite;
+}
+@keyframes otp-blink {
+  50% {
+    background-size: 0 0;
+  }
+}
+.otp-slot:disabled {
+  opacity: 1;
+}
+.otp-boxes.checking .otp-slot {
+  border-color: var(--cat);
+  animation: otp-pulse 0.8s ease infinite;
+}
+@keyframes otp-pulse {
+  50% {
+    background: color-mix(in oklab, var(--cat) 14%, var(--bg));
+  }
+}
+.otp-boxes.error .otp-slot,
+.otp-boxes.locked .otp-slot {
+  border-color: var(--cat-games);
+  background: color-mix(in oklab, var(--cat-games) 10%, var(--bg));
+}
+.otp-boxes.success .otp-slot {
+  border-color: var(--cat-generative);
+  background: color-mix(in oklab, var(--cat-generative) 16%, var(--bg));
+  animation: otp-wave 0.5s ease both;
+}
+.otp-boxes.success .otp-slot-wrap:nth-child(2) .otp-slot {
+  animation-delay: 0.05s;
+}
+.otp-boxes.success .otp-slot-wrap:nth-child(3) .otp-slot {
+  animation-delay: 0.1s;
+}
+.otp-boxes.success .otp-slot-wrap:nth-child(4) .otp-slot {
+  animation-delay: 0.15s;
+}
+.otp-boxes.success .otp-slot-wrap:nth-child(5) .otp-slot {
+  animation-delay: 0.2s;
+}
+.otp-boxes.success .otp-slot-wrap:nth-child(6) .otp-slot {
+  animation-delay: 0.25s;
+}
+.otp-boxes.success .otp-slot-wrap:nth-child(n + 7) .otp-slot {
+  animation-delay: 0.3s;
+}
+@keyframes otp-wave {
+  40% {
+    transform: translateY(-8px);
+  }
+}
+.otp-boxes.shake {
+  animation: otp-shake 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+@keyframes otp-shake {
+  15%,
+  85% {
+    transform: translateX(-3px);
+  }
+  30%,
+  70% {
+    transform: translateX(6px);
+  }
+  45%,
+  55% {
+    transform: translateX(-9px);
+  }
+  50% {
+    transform: translateX(9px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .otp-boxes.shake,
+  .otp-boxes.success .otp-slot,
+  .otp-slot.filled {
+    animation: none;
+  }
+}
+
+.otp-status {
+  min-height: 24px;
+  font-size: 14px;
+}
+.otp-error {
+  color: var(--cat-games);
+}
+.otp-ok {
+  color: var(--cat-generative);
+  font-weight: 600;
+}
+.otp-spinner::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+  vertical-align: -1px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  border-top-color: var(--cat);
+  animation: otp-spin 0.7s linear infinite;
+}
+@keyframes otp-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.otp-actions {
+  justify-content: center;
+}
+.otp-link {
+  background: none;
+  border: none;
+  color: var(--accent);
+  padding: 4px 6px;
+}
+.otp-link:disabled {
+  color: var(--muted);
+  opacity: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.otp-side {
+  gap: 14px;
+}
+.otp-log-title {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.otp-log {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 4px;
+  font-size: 13px;
+}
+.otp-log li {
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: var(--chip);
+}
+.otp-log li:first-child {
+  background: color-mix(in oklab, var(--cat) 16%, transparent);
+  animation: otp-drop 0.25s ease;
+}
