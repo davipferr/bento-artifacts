@@ -1,0 +1,188 @@
+.sk-controls {
+  gap: 10px;
+}
+.sk-clock {
+  min-width: 60px;
+  font-variant-numeric: tabular-nums;
+}
+.sk-timeline {
+  position: relative;
+  height: 26px;
+  margin: 4px 10px 0;
+  border-radius: 6px;
+  background: var(--bg);
+}
+.sk-arrival {
+  position: absolute;
+  top: 4px;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--accent-text);
+  background: var(--cat);
+}
+.sk-playhead {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  width: 2px;
+  background: var(--text);
+}
+
+.sk-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 700px) {
+  .sk-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.sk-panel {
+  gap: 6px;
+  padding: 14px;
+}
+.sk-panel header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.sk-panel h3 {
+  font-size: 15px;
+}
+.sk-panel > p {
+  margin: 0;
+  min-height: 3em;
+}
+.sk-shift {
+  font-size: 11.5px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--cat-generative) 18%, transparent);
+  font-variant-numeric: tabular-nums;
+}
+.sk-shift.bad {
+  background: color-mix(in oklab, var(--cat-games) 20%, transparent);
+}
+.sk-feed {
+  display: grid;
+  gap: 8px;
+  margin-top: 4px;
+}
+.sk-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+}
+.sk-content,
+.sk-skeleton {
+  position: absolute;
+  inset: 0;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.sk-skeleton {
+  background: var(--bg);
+}
+.sk-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 36px;
+  flex: none;
+}
+.sk-head div {
+  display: grid;
+  line-height: 1.2;
+  font-size: 13.5px;
+}
+.sk-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  flex: none;
+}
+.sk-content p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 18px;
+  height: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sk-image {
+  flex: none;
+  height: 120px;
+  margin-top: 4px;
+  border-radius: 8px;
+  overflow: hidden;
+  /* The low-res placeholder: just the image's average colour. */
+  background: hsl(var(--hue) 45% 60%);
+}
+.sk-image-art {
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 25% 70%, hsl(calc(var(--hue) + 40) 80% 70%) 0 18%, transparent 19%),
+    radial-gradient(circle at 70% 35%, hsl(calc(var(--hue) - 30) 70% 45%) 0 24%, transparent 25%),
+    linear-gradient(160deg, hsl(var(--hue) 80% 75%), hsl(calc(var(--hue) + 30) 60% 40%));
+}
+
+.sk-bones {
+  display: grid;
+  gap: 6px;
+  flex: 1;
+}
+.sk-bone {
+  display: block;
+  height: 11px;
+  border-radius: 6px;
+  background: var(--chip);
+  flex: none;
+}
+.sk-bone.circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+.sk-bone.image {
+  height: 120px;
+  margin-top: 6px;
+  border-radius: 8px;
+}
+.sk-skeleton.shimmer .sk-bone {
+  background: linear-gradient(90deg, var(--chip) 0%, color-mix(in oklab, var(--chip) 55%, var(--surface)) 50%, var(--chip) 100%) 0 0 / 300% 100%;
+  animation: sk-shimmer 1.3s linear infinite;
+}
+@keyframes sk-shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sk-skeleton.shimmer .sk-bone {
+    animation: none;
+  }
+}

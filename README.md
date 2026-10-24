@@ -70,6 +70,19 @@ React 19 · TypeScript · Vite · Canvas 2D · SVG · Web Audio · WebGL2 · Vit
 | File Tree Explorer | WAI-ARIA tree with type-ahead, inline rename, drag-to-move with auto-expand, delete with undo |
 | Notification Center | Bell with a 99+ badge, banners, grouped and stacked notices, swipe to dismiss, do not disturb |
 | Breakpoint Visualizer | Drag a fake viewport from 320 to 1920px; Tailwind/Bootstrap/Material bands and live media queries |
+| Hick's Law Menu | Timed picks in menus of 4, 16 and 64 items, flat vs grouped vs search, with your own fitted Hick curve |
+| Context Menu | Right-click menus whose submenus survive diagonal moves (the safe triangle, drawn live), flips and keyboard |
+| Latency Lab | The same button at 0–1000 ms with press, spinner, skeleton or optimistic feedback, plus a blind test |
+| Infinite Scroll vs Pagination | One feed three ways; find an item, go back, find the next, and see which pattern keeps your place |
+| Stepper / Wizard | Multi-step form with per-step validation, directional slides, a password meter and save-and-resume drafts |
+
+**Motion & Animation**
+
+| Artifact | What it shows |
+| --- | --- |
+| Animation Principles Lab | Disney's 12 principles as switches on one hopping character, against a version with all of them off |
+| Morphing Icons | Play ↔ pause, menu ↔ close and friends morphing point by point, in slow motion with the points shown |
+| Skeleton → Content | Hard cut, crossfade, staggered and blur-up reveals side by side, with a layout-shift counter |
 
 The original idea list and the build plan are in [IDEAS.md](IDEAS.md).
 

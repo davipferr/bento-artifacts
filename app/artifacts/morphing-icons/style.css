@@ -1,0 +1,90 @@
+.mi-buttons {
+  gap: 10px;
+}
+.mi-buttons p {
+  margin: 0;
+}
+.mi-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 10px;
+}
+.mi-button {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  padding: 12px 6px 8px;
+  border-radius: 12px;
+  background: var(--bg);
+}
+.mi-button.selected {
+  border-color: var(--cat);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--cat) 25%, transparent);
+}
+.mi-button:active {
+  transform: scale(0.95);
+}
+.mi-glyph .fill,
+.mi-big .fill {
+  fill: var(--text);
+}
+.mi-glyph .stroke,
+.mi-big .stroke {
+  fill: none;
+  stroke: var(--text);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.mi-big .stroke {
+  stroke-width: 1.6;
+}
+.mi-big .fill {
+  fill: color-mix(in oklab, var(--cat) 75%, var(--text));
+  stroke: none;
+}
+
+.mi-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .mi-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.mi-inspector {
+  justify-items: center;
+}
+.mi-big {
+  width: min(100%, 420px);
+  aspect-ratio: 1;
+  border-radius: 12px;
+  background: var(--bg);
+}
+.mi-grid-line {
+  fill: none;
+  stroke: var(--grid);
+  stroke-width: 0.04;
+}
+.mi-trail {
+  stroke: var(--muted);
+  stroke-width: 0.06;
+  stroke-dasharray: 0.25 0.25;
+  opacity: 0.7;
+}
+.mi-inspector .slider {
+  width: min(100%, 420px);
+}
+.mi-side {
+  gap: 14px;
+}
+.mi-facts {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+}
+.mi-facts span {
+  color: var(--muted);
+}

@@ -1,0 +1,199 @@
+.fp-controls {
+  gap: 8px;
+}
+.fp-controls p {
+  margin: 0;
+}
+.fp-target {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+.fp-target input {
+  width: 70px;
+  font: inherit;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+}
+.fp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 1000px) {
+  .fp-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.fp-panel {
+  gap: 10px;
+  padding: 14px;
+}
+.fp-panel header {
+  display: grid;
+}
+.fp-panel h3 {
+  font-size: 15px;
+}
+.fp-task {
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  background: color-mix(in oklab, var(--cat) 14%, transparent);
+}
+.fp-task.open,
+.fp-task.refind {
+  background: color-mix(in oklab, var(--cat-tools) 18%, transparent);
+}
+.fp-task.done {
+  background: color-mix(in oklab, var(--cat-generative) 20%, transparent);
+}
+.fp-frame {
+  position: relative;
+  height: 430px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  background: var(--bg);
+}
+.fp-list {
+  height: 100%;
+  overflow-y: auto;
+  padding: 6px;
+  display: grid;
+  align-content: start;
+  gap: 4px;
+  overscroll-behavior: contain;
+}
+.fp-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 8px;
+  text-align: left;
+  border-radius: 8px;
+  background: var(--surface);
+}
+.fp-thumb {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 7px;
+}
+.fp-text {
+  display: grid;
+  min-width: 0;
+  font-size: 13px;
+  line-height: 1.35;
+}
+.fp-text strong,
+.fp-text span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.fp-text span {
+  font-size: 12px;
+}
+.fp-loading {
+  padding: 14px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+.fp-more {
+  margin: 6px 0;
+  font-weight: 600;
+}
+.fp-pager {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 10px 0 4px;
+}
+.fp-pager button {
+  min-width: 32px;
+  padding: 4px 8px;
+  font-size: 13px;
+}
+.fp-pager button.current {
+  background: var(--cat);
+  border-color: var(--cat);
+  color: var(--accent-text);
+  font-weight: 700;
+}
+.fp-gap {
+  color: var(--muted);
+  padding: 0 2px;
+}
+.fp-jump input {
+  width: 56px;
+  font: inherit;
+  font-size: 13px;
+  padding: 4px 6px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+}
+.fp-footer {
+  margin-top: 10px;
+  padding: 16px 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 12.5px;
+  background: var(--chip);
+}
+.fp-detail {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding: 12px;
+  background: var(--surface);
+  animation: fp-in 0.18s ease;
+}
+@keyframes fp-in {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+}
+.fp-back {
+  justify-self: start;
+}
+.fp-hero {
+  height: 150px;
+  border-radius: 10px;
+}
+.fp-detail h4 {
+  margin: 0;
+  font-size: 18px;
+}
+.fp-detail p {
+  margin: 0;
+}
+.fp-stats {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3px 10px;
+  margin: 0;
+}
+.fp-stats dt {
+  color: var(--muted);
+}
+.fp-stats dd {
+  margin: 0;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}

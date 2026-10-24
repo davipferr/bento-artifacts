@@ -31,6 +31,7 @@ export const categories = {
   tools: 'Everyday Tools',
   games: 'Games & Toys',
   ui: 'Interface & UI',
+  motion: 'Motion & Animation',
 } as const
 
 export type Category = keyof typeof categories

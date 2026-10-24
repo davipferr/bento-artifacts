@@ -184,3 +184,20 @@ Six of these are interface pieces, so they get a new category, **Interface & UI*
 | 11 | **File Tree Explorer** (ui): WAI-ARIA tree keys + type-ahead, inline rename, drag to move with auto-expand, delete with undo | ✅ done |
 | 11 | **Notification Center** (ui): badge with 99+, ring + banner, group by app/time, stacks, swipe to dismiss, do not disturb | ✅ done |
 | 11 | **Breakpoint Visualizer** (ui): resizable frame 320–1920px, Tailwind/Bootstrap/Material bands, live mobile-first stylesheet | ✅ done |
+
+---
+
+# Batch 4
+
+UI, UX and animation. The animation pieces get their own category, **Motion & Animation** (`motion`).
+
+| Step | Scope | Status |
+|---|---|---|
+| 12 | **Animation Principles Lab** (motion): Disney's 12 principles as switches on one hopping character, solo / all off comparison, frame stepping | ✅ done |
+| 12 | **Morphing Icons** (motion): point-by-point SVG morphs, resample + align for outlines, slow-mo, scrubbing, point trails | ✅ done |
+| 12 | **Skeleton → Content** (motion): hard cut, crossfade, stagger and blur-up side by side, streaming arrivals, layout-shift counter | ✅ done |
+| 12 | **Hick's Law Menu** (ui): timed picks in 4/16/64-item menus, flat vs grouped vs search, least-squares fit of a + b·log₂(n+1) | ✅ done |
+| 12 | **Context Menu** (ui): submenus with the safe triangle (debug overlay), instant vs delay modes, flip placement, full keyboard | ✅ done |
+| 12 | **Latency Lab** (ui): 0/100/300/1000 ms × five feedback tricks, Nielsen's limits, 12-round blind test | ✅ done |
+| 12 | **Infinite Scroll vs Pagination** (ui): one feed three ways, find-go-back-find task with timings, scroll restoration toggle | ✅ done |
+| 12 | **Stepper / Wizard** (ui): per-step validation and focus, direction-aware slides, slug follow, password meter, save & resume | ✅ done |

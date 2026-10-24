@@ -1,0 +1,201 @@
+.cm-controls {
+  gap: 8px;
+}
+.cm-controls p {
+  margin: 0;
+}
+.cm-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .cm-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.cm-desktop {
+  position: relative;
+  height: 480px;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(circle at 80% 15%, color-mix(in oklab, var(--cat) 22%, transparent), transparent 45%),
+    radial-gradient(circle at 15% 90%, color-mix(in oklab, var(--cat-math) 18%, transparent), transparent 50%),
+    var(--bg);
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+.cm-file {
+  position: absolute;
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  width: 92px;
+  padding: 8px 4px;
+  font-size: 12.5px;
+  border: 1px solid transparent;
+  background: transparent;
+  border-radius: 10px;
+}
+.cm-file:hover,
+.cm-file.selected {
+  background: color-mix(in oklab, var(--cat) 16%, transparent);
+  border-color: color-mix(in oklab, var(--cat) 40%, transparent);
+}
+.cm-file-icon {
+  font-size: 34px;
+  line-height: 1;
+}
+
+.cm-menu {
+  position: absolute;
+  z-index: 3;
+  padding: 4px;
+  border-radius: 10px;
+  background: color-mix(in oklab, var(--surface) 92%, transparent);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  box-shadow: 0 18px 40px -16px rgb(0 0 0 / 0.45);
+  font-size: 13.5px;
+  outline: none;
+  animation: cm-in 0.1s ease;
+}
+.cm-menu.sub {
+  z-index: 4;
+}
+@keyframes cm-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
+.cm-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 6px;
+  cursor: default;
+}
+.cm-item.active {
+  background: var(--cat);
+  color: var(--accent-text);
+}
+.cm-item.active kbd,
+.cm-item.active .cm-chevron {
+  color: inherit;
+  opacity: 0.85;
+}
+.cm-item.danger {
+  color: var(--cat-games);
+}
+.cm-item.danger.active {
+  background: var(--cat-games);
+  color: #fff;
+}
+.cm-item.disabled {
+  opacity: 0.45;
+}
+.cm-label {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cm-item kbd {
+  font: 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--muted);
+}
+.cm-chevron {
+  color: var(--muted);
+  font-size: 15px;
+}
+.cm-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.cm-sep {
+  height: 1px;
+  margin: 4px 6px;
+  background: var(--border);
+}
+
+.cm-debug {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+.cm-debug polygon {
+  fill: color-mix(in oklab, var(--cat-games) 12%, transparent);
+  stroke: var(--cat-games);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 3;
+}
+.cm-debug polygon.inside {
+  fill: color-mix(in oklab, var(--cat-generative) 22%, transparent);
+  stroke: var(--cat-generative);
+}
+.cm-trail {
+  fill: none;
+  stroke: var(--text);
+  stroke-width: 1.5;
+  opacity: 0.35;
+}
+.cm-debug circle {
+  fill: var(--cat-games);
+}
+.cm-debug circle.inside {
+  fill: var(--cat-generative);
+}
+.cm-toast {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  z-index: 6;
+  padding: 7px 14px;
+  border-radius: 10px;
+  background: var(--text);
+  color: var(--bg);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.cm-side {
+  gap: 12px;
+}
+.cm-stats {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 12px;
+  margin: 0;
+  font-size: 14px;
+}
+.cm-stats dd {
+  margin: 0;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.cm-log {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 4px;
+}
+.cm-log li {
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: var(--chip);
+}
+.cm-log li:first-child {
+  background: color-mix(in oklab, var(--cat) 16%, transparent);
+}

@@ -17,6 +17,7 @@
   --cat-tools: #f08c00;
   --cat-games: #e03131;
   --cat-ui: #1098ad;
+  --cat-motion: #5c940d;
 
   /* Data colours, read by canvases through getComputedStyle. */
   --bar: #adb5bd;
@@ -45,6 +46,7 @@
     --cat-tools: #ffc048;
     --cat-games: #ff6b6b;
     --cat-ui: #3bc9db;
+    --cat-motion: #94d82d;
     --bar: #5c6370;
     --compare: #ffc048;
     --swap: #f783ac;
@@ -69,6 +71,7 @@
   --cat-tools: #ffc048;
   --cat-games: #ff6b6b;
   --cat-ui: #3bc9db;
+  --cat-motion: #94d82d;
   --bar: #5c6370;
   --compare: #ffc048;
   --swap: #f783ac;

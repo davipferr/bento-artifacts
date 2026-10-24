@@ -1,0 +1,99 @@
+.ap-stage-card {
+  gap: 10px;
+}
+.ap-canvas {
+  height: 340px;
+  background: var(--bg);
+}
+.ap-canvas.small {
+  height: 170px;
+  opacity: 0.85;
+}
+@media (max-width: 560px) {
+  .ap-canvas {
+    height: 240px;
+  }
+  .ap-canvas.small {
+    height: 130px;
+  }
+}
+.ap-phase {
+  min-width: 90px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  text-align: center;
+  background: color-mix(in oklab, var(--cat) 16%, transparent);
+}
+.ap-title {
+  font-size: 16px;
+}
+.ap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 10px;
+}
+.ap-principle {
+  position: relative;
+  display: grid;
+  gap: 4px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease;
+}
+.ap-principle.on {
+  border-color: color-mix(in oklab, var(--cat) 55%, var(--border));
+  background: color-mix(in oklab, var(--cat) 9%, var(--bg));
+}
+.ap-principle p {
+  margin: 0;
+  padding-right: 34px;
+}
+.ap-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.ap-toggle input {
+  accent-color: var(--cat);
+  width: 16px;
+  height: 16px;
+}
+.ap-num {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--chip);
+}
+.ap-principle.on .ap-num {
+  background: var(--cat);
+  color: var(--accent-text);
+}
+.ap-solo {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  padding: 1px 7px;
+  font-size: 11px;
+  border-radius: 999px;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+.ap-principle:hover .ap-solo,
+.ap-principle:focus-within .ap-solo {
+  opacity: 1;
+}
+@media (hover: none) {
+  .ap-solo {
+    opacity: 0.8;
+  }
+}

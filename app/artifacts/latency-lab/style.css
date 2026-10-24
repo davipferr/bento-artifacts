@@ -1,0 +1,221 @@
+.lt-limits {
+  position: relative;
+  height: 54px;
+  margin-bottom: 4px;
+}
+.lt-band {
+  position: absolute;
+  top: 0;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.lt-band.instant {
+  border-radius: 8px 0 0 8px;
+  background: color-mix(in oklab, var(--cat-generative) 30%, transparent);
+}
+.lt-band.flow {
+  background: color-mix(in oklab, var(--cat-tools) 28%, transparent);
+}
+.lt-band.lost {
+  border-radius: 0 8px 8px 0;
+  background: color-mix(in oklab, var(--cat-games) 24%, transparent);
+}
+.lt-tick {
+  position: absolute;
+  top: 30px;
+  transform: translateX(-50%);
+  padding-top: 4px;
+  font: 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--muted);
+  border-left: 1px solid var(--muted);
+  padding-left: 3px;
+}
+.lt-tick:first-of-type {
+  transform: none;
+}
+.lt-note {
+  margin: 0;
+}
+
+.lt-grid-card {
+  overflow-x: auto;
+}
+.lt-grid {
+  display: grid;
+  grid-template-columns: 110px repeat(5, minmax(150px, 1fr));
+  gap: 8px;
+  min-width: 860px;
+}
+.lt-row {
+  display: contents;
+}
+.lt-head,
+.lt-delay {
+  display: grid;
+  gap: 2px;
+  font-size: 12.5px;
+  align-content: start;
+}
+.lt-head span,
+.lt-delay span {
+  font-size: 11.5px;
+  line-height: 1.3;
+}
+.lt-delay {
+  align-content: center;
+}
+.lt-cell {
+  padding: 8px;
+  border-radius: 10px;
+  background: var(--bg);
+}
+
+.lt-loader {
+  display: grid;
+  gap: 8px;
+}
+.lt-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+  background: var(--cat);
+  border-color: var(--cat);
+  color: var(--accent-text);
+  transition:
+    transform 0.08s ease,
+    filter 0.08s ease,
+    box-shadow 0.08s ease;
+  box-shadow: 0 3px 0 color-mix(in oklab, var(--cat) 55%, #000);
+}
+.lt-button.pressed {
+  transform: translateY(2px) scale(0.98);
+  filter: brightness(0.92);
+  box-shadow: 0 1px 0 color-mix(in oklab, var(--cat) 55%, #000);
+}
+.lt-spinner {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 2px solid rgb(255 255 255 / 0.4);
+  border-top-color: currentColor;
+  animation: lt-spin 0.7s linear infinite;
+}
+@keyframes lt-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.lt-result {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.lt-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  animation: lt-in 0.12s ease;
+}
+@keyframes lt-in {
+  from {
+    opacity: 0;
+  }
+}
+.lt-profile.skeleton {
+  animation: none;
+}
+.lt-avatar {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  background: var(--chip);
+}
+.lt-name {
+  font-size: 13.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.lt-bone {
+  width: 90px;
+  height: 11px;
+  border-radius: 6px;
+  background: var(--chip);
+}
+.lt-sync {
+  color: var(--muted);
+  font-size: 13px;
+  animation: lt-spin 1s linear infinite;
+}
+.lt-empty {
+  color: var(--muted);
+}
+.lt-loader.compact .lt-button {
+  width: 100%;
+  padding: 5px 8px;
+  font-size: 13px;
+}
+
+.lt-title {
+  font-size: 16px;
+}
+.lt-blind,
+.lt-blind-start,
+.lt-blind-results {
+  display: grid;
+  gap: 12px;
+  max-width: 520px;
+}
+.lt-blind-start p {
+  margin: 0;
+}
+.lt-rate,
+.lt-reveal {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: color-mix(in oklab, var(--cat) 10%, transparent);
+}
+.lt-blind-results h3 {
+  font-size: 14px;
+}
+.lt-bars {
+  display: grid;
+  gap: 6px;
+}
+.lt-bar-row {
+  display: grid;
+  grid-template-columns: 150px 1fr 32px;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+.lt-bar {
+  height: 12px;
+  border-radius: 6px;
+  background: var(--chip);
+  overflow: hidden;
+}
+.lt-bar i {
+  display: block;
+  height: 100%;
+  border-radius: 6px;
+  background: var(--cat);
+}
+.lt-bar.trick i {
+  background: var(--cat-math);
+}
