@@ -15,6 +15,7 @@ React 19 · TypeScript · Vite · Canvas 2D · SVG · Web Audio · WebGL2 · Vit
 | Fourier Drawing Machine | Any drawing rebuilt from spinning circles (the DFT as epicycles); 1–256 circles, error and spectrum |
 | Mandelbrot Zoomer | GPU zoom with a Julia-set inset; past float32 precision it switches to a progressive 64-bit CPU render |
 | Voronoi Garden | Voronoi cells by half-plane clipping, Delaunay overlay, drifting seeds and Lloyd relaxation |
+| Chaos Pendulums | Up to 200 RK4 double pendulums a hair apart; separation on a log chart, energy check, draggable start |
 
 **Algorithms & CS**
 
@@ -23,6 +24,7 @@ React 19 · TypeScript · Vite · Canvas 2D · SVG · Web Audio · WebGL2 · Vit
 | Sorting Race | Six sorts race on the same array; finishing order = operation count |
 | Pathfinding Playground | BFS, Dijkstra, A* and greedy on a paintable grid with weights; live re-solve and a comparison table |
 | Regex Railroad | A regex parser drawn as a railroad diagram; hover a piece to see its source and its captures |
+| Huffman Coding | The tree built merge by merge, codes vs UTF-8 / fixed width / entropy, hover to trace bits |
 
 **Sound & Music**
 
@@ -39,6 +41,7 @@ React 19 · TypeScript · Vite · Canvas 2D · SVG · Web Audio · WebGL2 · Vit
 | Flow Field Painter | Particles following 3D simplex noise leave ink trails; palettes, brush, PNG export |
 | L-System Garden | Editable rewrite rules + turtle graphics: plants, snowflakes and space-filling curves that grow |
 | Reaction–Diffusion | Gray–Scott on the GPU (ping-pong RGBA16F textures), paintable, with a clickable (k, f) map; CPU fallback |
+| Boids Flock | Separation, alignment, cohesion and wander on a spatial grid; hawk/bread pointer, polarization meter |
 
 **Everyday Tools**
 

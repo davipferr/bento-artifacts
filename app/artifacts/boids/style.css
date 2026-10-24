@@ -1,0 +1,42 @@
+.bo-toolbar {
+  gap: 12px;
+}
+.bo-sliders {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 14px 24px;
+}
+.bo-stage {
+  padding: 12px;
+}
+.bo-canvas {
+  height: clamp(340px, 62vh, 620px);
+  touch-action: none;
+  background: color-mix(in oklab, var(--cat) 5%, transparent);
+}
+.bo-stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 24px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.bo-stats strong {
+  color: var(--text);
+}
+.bo-meter {
+  display: inline-block;
+  width: 90px;
+  height: 6px;
+  margin-left: 8px;
+  border-radius: 3px;
+  background: var(--chip);
+  vertical-align: middle;
+  overflow: hidden;
+}
+.bo-meter i {
+  display: block;
+  height: 100%;
+  background: var(--cat);
+}

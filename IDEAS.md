@@ -158,3 +158,13 @@ A falling-sand toy: sand, water, fire, wood, smoke and plant interact cell by ce
 - Category filter chips + search by tag.
 - Route per artifact (`#/sorting-race`) with a fullscreen mode and a "view source" link to GitHub.
 - Light/dark theme shared by every artifact through CSS variables.
+
+---
+
+# Batch 2
+
+| Step | Scope | Status |
+|---|---|---|
+| 10 | **Chaos Pendulums** (math): RK4 double-pendulum ensemble, log-scale divergence chart, energy check | ✅ done |
+| 10 | **Boids Flock** (generative): Reynolds' three rules + wander, spatial grid, hawk/bread pointer | ✅ done |
+| 10 | **Huffman Coding** (algorithms): step-by-step tree build, code table, bit stream, entropy bound | ✅ done |

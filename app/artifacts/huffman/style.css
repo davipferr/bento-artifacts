@@ -1,0 +1,137 @@
+.hf-text {
+  width: 100%;
+  resize: vertical;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  line-height: 1.5;
+}
+.hf-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+}
+.hf-stat {
+  display: grid;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--chip);
+  font-variant-numeric: tabular-nums;
+}
+.hf-stat.strong {
+  background: color-mix(in oklab, var(--cat) 18%, transparent);
+}
+.hf-step {
+  flex: 1;
+  min-width: 200px;
+  max-width: 360px;
+}
+.hf-tree {
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+.hf-tree svg {
+  display: block;
+  margin: 0 auto;
+}
+.hf-edge line {
+  stroke: var(--border);
+  stroke-width: 2;
+  transition: stroke 0.15s;
+}
+.hf-edge text {
+  font: 600 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  fill: var(--muted);
+}
+.hf-edge.on line {
+  stroke: var(--cat);
+  stroke-width: 3;
+}
+.hf-edge.on text {
+  fill: var(--cat);
+}
+.hf-node circle {
+  stroke: var(--cat);
+  stroke-width: 2;
+  fill: var(--surface);
+  transition: fill 0.15s;
+}
+.hf-node.leaf {
+  cursor: pointer;
+}
+.hf-node.leaf circle {
+  fill: color-mix(in oklab, var(--cat) 22%, var(--surface));
+}
+.hf-node.on circle,
+.hf-node.newest circle {
+  fill: var(--cat);
+}
+.hf-node.on text.hf-label,
+.hf-node.newest text.hf-label {
+  fill: var(--surface);
+}
+.hf-label {
+  font: 600 12px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  fill: var(--text);
+  pointer-events: none;
+}
+.hf-weight {
+  font-size: 10px;
+  fill: var(--muted);
+  pointer-events: none;
+}
+.hf-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 760px) {
+  .hf-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.hf-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  font-variant-numeric: tabular-nums;
+}
+.hf-table th {
+  text-align: left;
+  font-weight: 500;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  padding: 4px 6px;
+}
+.hf-table td {
+  padding: 3px 6px;
+  border-bottom: 1px solid var(--grid);
+}
+.hf-table tr.on td {
+  background: color-mix(in oklab, var(--cat) 16%, transparent);
+}
+.hf-stream {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  max-height: 320px;
+  overflow-y: auto;
+  word-break: break-all;
+}
+.hf-chunk {
+  padding: 1px 4px;
+  border-radius: 4px;
+  background: var(--chip);
+  cursor: default;
+}
+.hf-chunk:nth-child(even) {
+  background: color-mix(in oklab, var(--cat) 9%, var(--chip));
+}
+.hf-chunk.on {
+  background: var(--cat);
+  color: var(--surface);
+}

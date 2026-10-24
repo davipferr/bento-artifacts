@@ -1,0 +1,39 @@
+.dp-toolbar {
+  gap: 12px;
+}
+.dp-sliders {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px 24px;
+}
+.dp-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .dp-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.dp-stage {
+  padding: 12px;
+}
+.dp-canvas {
+  height: clamp(340px, 66vh, 640px);
+  touch-action: none;
+}
+.dp-chart {
+  height: 200px;
+}
+.dp-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.dp-stats strong {
+  color: var(--text);
+}
